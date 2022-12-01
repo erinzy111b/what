@@ -13,7 +13,7 @@ $total = 0;
 
 echo count($grades), "<br>";
 
-$row = 0; //為了pa而定義的，不然找不到$row
+$row = 0; //為了下方pa而定義的，不然找不到$row
 foreach ($grades as $matrix) {
     $sum = 0;
 
