@@ -1,0 +1,578 @@
+{
+    // 為確保Emmet建議始終位於建議列表的頂部，請添加以下設置
+    "emmet.showSuggestionsAsSnippets": true,
+    //解決 emmet 在 js 檔案無法正常的自動產生 html
+    "emmet.includeLanguages": {
+         "javascript": "javascriptreact", // html
+         "ejs": "html"
+    },
+    // 讓 Emmet 功能使用 Tab 鍵就可以觸發
+    "emmet.triggerExpansionOnTab": true,
+
+    //已開啟的編輯器會讓每次開檔/關檔的時候，檔案總管的檔案清單上下位置晃動，以致於眼球需要經常重新定位，分散注意力。
+    //由於已經有「頁籤」可以看已開啟的檔案，用 Ctrl+E 也可以快速找檔案，所以已開啟的編輯器就沒那麼有實用價值了。
+    "explorer.openEditors.visible": 0,
+    // 刪除檔案時確認
+    "explorer.confirmDelete": false,
+    // 拖曳移動檔案不彈出確認視窗
+    "explorer.confirmDragAndDrop": false,
+    "extensions.autoUpdate": false, //禁止擴展更新
+    "extensions.ignoreRecommendations": true,
+    "update.mode": "none", //禁止軟件版本更新
+    // 在儲存時設定檔案格式。格式器必須處於可用狀態、檔案不得自動儲存，且編輯器不得關機。
+    "diffEditor.ignoreTrimWhitespace": true,
+    // 設定預設存檔時不做格式化,使用分別啟動
+    // 控制編輯器是否應自動設定貼上的內容格式。格式器必須可供使用，而且格式器應該能夠設定文件中一個範圍的格式。
+    "editor.cursorStyle": "block",
+    "editor.formatOnPaste": true,                       // 關閉程式碼時會自動排版
+    "editor.formatOnSave": false,                        // 關閉程式碼存檔時自動排版(縮排)
+    "editor.defaultFormatter": "esbenp.prettier-vscode", // 指定排版工具(預設)
+    // 建議禁用內置的editor.matchBrackets設置
+    "editor.matchBrackets": "never",
+    //字體間距
+    "editor.letterSpacing": 1,
+    // 增加值"backgroundColor : {color}"，以提高知名度
+    "bracketPairColorizer.highlightActiveScope": true,
+    // 在裝訂線中顯示活動範圍括號
+    "bracketPairColorizer.showBracketsInGutter": true,
+
+    // 分別啟用指定語言
+    "[vue]": {
+      // 定義一個預設格式化程式, 該格式化程式優先於所有其他格式化程式設定。必須是提供格式化程式的擴充套件的識別符號。
+      "editor.defaultFormatter": "octref.vetur"
+    },
+    "[json]": {
+      // 定義一個預設格式化程式, 該格式化程式優先於所有其他格式化程式設定。必須是提供格式化程式的擴充套件的識別符號。
+      "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[jsonc]": {
+      // 定義一個預設格式化程式, 該格式化程式優先於所有其他格式化程式設定。必須是提供格式化程式的擴充套件的識別符號。
+      "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[php]": {
+       "editor.formatOnPaste": true,
+       "editor.formatOnSave": true,
+       "editor.defaultFormatter": "kokororin.vscode-phpfmt",  //kokororin.vscode-phpfmt,  "bmewburn.vscode-intelephense-client","junstyle.php-cs-fixer", Sophisticode.php-formatter
+    },
+    "[css]": {
+       "editor.formatOnPaste": true,
+       "editor.formatOnSave": true,
+       "editor.defaultFormatter": "esbenp.prettier-vscode",
+    },
+    // 標記列表(用逗號隔開)，其中內容不應重新格式化。"null" 預設為 "pre" 標記。
+    "html.format.contentUnformatted": "",
+    //不寫 AngularJS 1.x 與 Ionic 的人，建議可以把內建的 Code Snippets 關閉
+    "html.suggest.angular1": false,
+    "html.suggest.ionic": false,
+    // 每一種語言的預設格式化規則
+    "[html]": {
+       "editor.formatOnSave": true,
+       //在 HTML 貼上 <pre> 區段時，這個設定會導致 <pre> 標籤內的內容也被自動縮排，導致格式亂掉,建議關閉 HTML 的自動縮排功能。
+       "editor.autoIndent": "none",
+       "editor.defaultFormatter": "vscode.html-language-features",
+       //"editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[less]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+       "editor.formatOnSave": true,
+       //"editor.defaultFormatter": "esbenp.prettier-vscode",
+       "editor.defaultFormatter": "vscode.typescript-language-features"
+
+    },
+    // 關掉驗證，因為有使用到 Facebook 的 Flow.js，Vscode 的老爸微軟不支援
+    "javascript.validate.enable": false,
+    "javascript.updateImportsOnFileMove.enabled": "never",
+    "javascript.format.placeOpenBraceOnNewLineForControlBlocks": false, // 函式左括號{是否換行
+    "javascript.format.insertSpaceBeforeFunctionParenthesis": false, // 不讓函式(名)和後面的括號之間加個空格
+    // 需下載安裝 Fira Code 字型 (安裝 OTF 格式)
+    // https://github.com/tonsky/FiraCode/releases
+    // 需下載客製化過的 Microsoft YaHei Mono 字型
+    // https://github.com/doggy8088/MicrosoftYaHeiMono-CP950
+    // 控制字型家族、開啟連字符號。
+    "editor.fontFamily": "'Fira Code',Menlo, Monaco, 'Courier New', monospace",
+    // 要啟用連體字型(Fira Code)必須將以下設定打開
+"editor.fontLigatures": false, //縮排對齊線
+    "editor.multiCursorModifier": "ctrlCmd", //用 Ctrl 鍵來觸發多重游標選取
+    // 控制是否會顯示迷你地圖
+    "editor.minimap.enabled": false, // 關掉右側滑動預覽檔
+    //如果開啟 MiniMap 的話，預設會顯示實際字元 (字超小)，根本看不清楚。
+    //將這個設定關閉，就會改顯示彩色區塊而已，這會讓 VSCode 反應速度更快。
+    "editor.minimap.renderCharacters": false,
+    // 在儲存時設定檔案格式。
+    // 格式器必須處於可用狀態、檔案不得自動儲存，且編輯器不得關機。
+    "editor.wordWrap": "on", //當程式碼超過編輯器畫面，會自動換行。
+    "editor.lineHeight": 28,
+    // 控制字型大小 (以像素為單位)。
+    "editor.fontSize": 20, // 字體大小
+    "editor.lineNumbers": "on",//顯示行號
+    // 開啟 vscode 檔案路徑導航
+    "breadcrumbs.enabled": true,
+    // 與 Tab 相等的空格數量。當 `editor.detectIndentation` 已開啟時
+    // vscode預設啟用了根據檔案型別自動設定tabsize的選項
+    "editor.detectIndentation": false,
+    // 一個 tab 鍵的空白間距。
+    "editor.tabSize": 2,
+    // 游標粗細
+    "editor.cursorWidth": 2,
+    // code snippet 提示拉到最上面
+    "editor.snippetSuggestions": "top",
+    // 控制編輯器是否顯示控制字元。顯示 markdown 中英文切換時產生的特殊字元
+    "editor.renderControlCharacters": true,
+    // 在 #editor.wordWrap# 為 wordWrapColumn 或 bounded 時，控制編輯器的折行列。100 列後換行
+    "editor.wordWrapColumn": 100,
+    "editor.selectionHighlight": true, //選中相同代碼時，顯示高亮度
+    "editor.quickSuggestions": { //智慧提示
+       "other": true,
+       "comments": true,
+       "strings": true
+    },
+    "editor.mouseWheelZoom": true, // 使用滑鼠滾輪並按住 Ctrl 時，縮放編輯器的字型, 用ctrl+ 滑鼠滾輪去放大縮小
+    "editor.fontWeight": "600", // 300(Light)、400(Regular)、500、600(Medium)
+    // 提醒 code 該斷行了
+    "editor.rulers": [
+
+      120
+    ],
+    "editor.renderLineHighlight" : "line", // line、all
+    "workbench.colorCustomizations": {
+      "editor.lineHighlightBackground": "#00000090",
+      "editor.lineHighlightBorder": "#ffffff30"
+    }, //Default High Contrast, Default Light+、Solarized Dark、MonokaiMarkdown Editor Dark
+    // Theme 設定
+    "workbench.iconTheme": "material-icon-theme", //增加文件夾圖示。 vscode-great-icons、 要先下載vscode-icons套件(後面會提到)
+    "workbench.sideBar.location": "left",
+    // 調整視窗的縮放比例。原始大小為 0
+    // ，而且每個向上增量 (例如 1) 或向下增量 (例如 -1) 代表放大或縮小 20%。
+    // 調整視窗的縮放級別。原始大小是 0，每次遞增(例如 1)或遞減(例如 -1)表示放大或縮小 20%。也可以輸入小數以便以更精細的粒度調整縮放級別。
+    "window.zoomLevel": 0,
+    // 控制功能表列的可見度。[切換] 設定表示會隱藏功能表列，按一下 Alt 鍵則會顯示。
+    // 除非視窗是全螢幕，否則預設會顯示功能表列。
+    // "window.menuBarVisibility": "toggle",
+    // Windows 的換行是 \r\n (CRLF)，而 Linux 是 \n (LF)，會遇到 Windows 開發後放在 Linux 跑時會 error，為了讓事情簡單化就預設是 LF 吧，這是針對新增的，舊的可以從右下角去改變它
+    "files.eol": "\n",
+    // 控制已變更之檔案的自動儲存。接受的值: 'off'、'afterDelay、'onFocusChange' (編輯器失去焦點)、'onWindowChange' (視窗失去焦點)。若設為 'afterDelay'，可以在 "files.autoSaveDelay" 中設定延遲。
+    // 切換檔案時會自動儲存
+    "files.autoSave": "onFocusChange",
+    "files.autoSaveDelay": 3000,
+    //除存檔案時，自動插入新的一行
+    "files.insertFinalNewline": true, // 儲存檔案時在其結尾插入最後一個新行
+    //設定其它副檔名的檔案跟 php 是有關係的
+    "files.associations": {
+       "*.inc": "php",
+       "*.tpl": "html",
+       "*.js": "javascriptreact",
+       "*.csproj": "msbuild"
+    },
+    //新檔為 UTF8
+    "files.encoding": "utf8",
+    // 除存檔案時，自動修正空格
+    "files.trimTrailingWhitespace": true,
+    // 用來忽略工程打開的文件夾 "files.exclude": { "**/.vscode": true, "**/.DS_Store": true, "**/.history":true, "**/nbproject":true }
+    "files.exclude": { "**/.vscode": true,
+                       "**/.DS_Store": true,
+                       "**/.history":true,
+                       "**/nbproject":true
+                     },
+    // 創建和更新代碼的頭部信息作者
+    "fileheader.Author": "Baldwin",
+    "fileheader.LastModifiedBy": "Baldwin",
+    //在預設不支持 Emmet 的語言中啟用 Emmet 縮寫功能，在這添加該語言與受支持的語言間的映射
+    //示例: {"vue-html": "html", "javascript", "javascriptreact"}
+    // 用來忽略搜索的文件夾
+    "search.exclude": {
+      "**/bower_components": true,
+      "**/vendor": true,
+      "**/build": true,
+      "**/node_modules": true,
+      "**/storage/framework/views": true,
+      "**/.git": true,
+      "**/.svn": true,
+      "**/.hg": true,
+      "**/CVS": true,
+      "**/.DS_Store": true,
+      "**/*.jpg": true,
+      "**/*.jpeg": true,
+      "**/*.png": true,
+      "**/*.gif": true,
+      "**/*.ttf": true,
+      "**/*.tga": true,
+      "**/*.dds": true,
+      "**/*.ico": true,
+      "**/*.eot": true,
+      "**/*.pdf": true,
+      "**/*.swf": true,
+      "**/*.jar": true,
+      "**/*.zip": true,
+      "**/*.map": true
+    },
+    //======================= Git 設定 ======================================//
+    "git.autofetch": true, //讓 VSCode 在背景自動執行 git fetch
+    "git.enableCommitSigning": false, //必要時可以啟用 Git 簽章功能 ( 我平時都會設定為 true )
+    "git.enableSmartCommit": true, //如果所有變更都還沒有 git add ( Stage ) 的話，預設會自動全部 Commit，不會再先問過。
+    "git.confirmSync": false, //當要同步 Git 遠端儲存庫時，不需要再提問。
+    // TODO Highlight 這功能要開啟在哪些檔案裡
+    "todohighlight.include": [
+       "**/*.js",
+       "**/*.jsx",
+       "**/*.ts",
+       "**/*.tsx",
+       "**/*.html",
+       "**/*.php",
+       "**/*.css",
+       "**/*.scss",
+       "**/*.cs"
+    ],
+    // TODO Highlight Keyword
+    "todohighlight.keywordsPattern": "\"TODO:|FIXME:|\\\\(([^)]+)\\\\)\"",
+    //git-autoconfig
+    "git-autoconfig.configList": [
+  {
+    "user.email": "allen@example.com",
+    "user.name": "allen tai"
+  },
+  {
+    "user.email": "allen5183@gmail.com",
+    "user.name": "gituser"
+  }
+],
+    // Spell 要含哪些程式語言
+    "cSpell.enableFiletypes": [
+      "asciidoc",
+      "cpp",
+      "csharp",
+      "css",
+      "git-commit",
+      "handlebars",
+      "haskell",
+      "html",
+      "jade",
+      "javascript",
+      "javascriptreact",
+      "json",
+      "jsonc",
+      "latex",
+      "less",
+      "markdown",
+      "plaintext",
+      "python",
+      "pug",
+      "restructuredtext",
+      "rust",
+      "scala",
+      "scss",
+      "text",
+      "typescript",
+      "typescriptreact",
+      "yaml",
+      "yml",
+      "ruby"
+    ],
+    "auto-close-tag.excludedTags": [
+      "area",
+      "base",
+      "br",
+      "col",
+      "command",
+      "embed",
+      "hr",
+      "img",
+      "input",
+      "keygen",
+      "link",
+      "meta",
+      "param",
+      "source",
+      "track",
+      "wbr"
+    ],
+    // 檔案路徑用， ~ 是給 webpack 用
+    "path-intellisense.mappings": {
+       "~img": "${workspaceRoot}/src/img/"
+    },
+    //========================= COMPOSER =================================//       
+      "composer.executablePath": "C:/composer/composer.bat",
+    //"composer.workingPath": "E:\\webxx01",   //指定 Workspace 專案目錄,
+
+    //============================== PHP 環境設定相關 =====================//
+    "php.validate.enable": true,     //啟用PHP驗證
+    "php.validate.run" : "onSave",   //控制在何時機(onSave、onType)作驗證
+
+    //============================== PHP IntelliSense =========================//
+    "php.suggest.basic": false,  //禁用VScode代碼內置的PHP智能感知設置
+    "php.executablePath": "D:/xampp8/php/php.exe", //PHP 執行檔路徑
+    "php.validate.executablePath": "D:/xampp8/php/php.exe",
+
+    //======================= phpfmt 設定  ==================================//
+    "phpfmt.php_bin": "D:/xampp8/php/php.exe",
+    "phpfmt.passes": [
+      "PSR2KeywordsLowerCase",
+      "PSR2LnAfterNamespace",
+      "PSR2CurlyOpenNextLine",
+      "PSR2ModifierVisibilityStaticOrder",
+      "PSR2SingleEmptyLineAndStripClosingTag",
+      "ReindentSwitchBlocks"
+    ],"phpfmt.exclude": [
+      "ReindentComments",
+      "StripNewlineWithinClassBody"
+    ],
+    "phpfmt.psr2": false,
+
+    //======================= prettier 設定 =================================//
+    "prettier.useEditorConfig": false,
+    // 每行寬度,超過最大值換行
+    "prettier.printWidth": 150,
+    // 縮格空幾格,縮排位元組數
+    "prettier.tabWidth": 4,
+    "prettier.endOfLine": "auto", // 行尾換行格式
+    // prettier 設定強制單引號,使用單引號而不是雙引號
+    "prettier.singleQuote": true,
+    "prettier.jsxBracketSameLine": false, // 在jsx中把'>' 是否單獨放一行
+    "prettier.jsxSingleQuote": true,  // 在jsx中使用單引號代替雙引號
+    // 盡可能省略箭頭函式的括號,(x) => {} 箭頭函式引數只有一個時是否要有小括號。avoid：省略括號
+    "prettier.arrowParens": "avoid",
+    // 字與括號保有空格,在物件，陣列括號與文字之間加空格 "{ foo: bar }"
+    "prettier.bracketSpacing": true,
+    // 儘可能控制尾隨逗號的輸出。 有效選項： 'none' - 無尾隨逗號 ' es5' - 在ES5中有效的尾隨逗號（物件，陣列等） 'all' - 尾隨逗號 儘可能（函式引數）
+    "prettier.trailingComma": "es5", //none, 禁止隨時新增逗號       
+    "prettier.semi": true, // 是否在每行末尾新增分號
+    "prettier.insertSpaceBeforeFunctionParenthesis": false,
+    "prettier.useTabs": false, // 縮排不使用tab，使用空格
+
+    //============================ Vue Setting ====================================//
+    //.vue檔案template格式化支援，並使用js-beautify-html外掛
+    "vetur.validation.template": false,
+    "vetur.completion.useScaffoldSnippets": false,
+    // 選擇 vue 檔案中 template 的格式化工具
+    "vetur.format.defaultFormatter.html": "js-beautify-html",
+    "vetur.format.defaultFormatter.js": "prettier",
+    "vetur.format.defaultFormatter.less": "prettier",
+    "vetur.format.defaultFormatter.css": "prettier",
+    "vetur.format.options.tabSize": 4,   //縮排為4
+    "vetur.format.options.useTabs": false,
+    "vetur.format.defaultFormatterOptions": {
+        //js-beautify-html格式化配置
+         "js-beautify-html": {
+           "wrap_attributes": "force-aligned" // 屬性強制換行
+        },
+        "prettier": {
+          "arrowParens": "avoid",    //(x) => {} 箭頭函式引數只有一個時是否要有小括號。avoid：省略括號
+          "bracketSpacing": true,  // 在物件，陣列括號與文字之間加空格 "{ foo: bar }"
+          "endOfLine": "auto",   // 行尾換行格式
+          "eslintIntegration": false, //不讓prettier使用eslint的程式碼格式進行校驗
+          "jsxBracketSameLine": false, // 在jsx中把'>' 是否單獨放一行
+          "jsxSingleQuote": false, // 在jsx中使用單引號代替雙引號
+          "printWidth": 100,    // 超過最大值換行
+          "singleQuote": true, //使用單引號而不是雙引號
+          "semi": true, //在語句結尾處加分號
+          "tabWidth": 4,  //縮排位元組數
+          "trailingComma": "none", //禁止隨時新增逗號
+          "tslintIntegration": false,  // 不讓prettier使用tslint的程式碼格式進行校驗
+          "useTabs": false, // 縮排不使用tab，使用空格
+           // 定義函式引數括號前的空格處理方式。
+          "typescript.format.insertSpaceBeforeFunctionParenthesis": true,
+        }
+    },
+    //======================= eslint 配置程式碼檢查 ===================================//
+    //保存時自動格式化，但預設只支援 js
+    "eslint.format.enable": false,
+    "eslint.alwaysShowStatus": false,
+    "eslint.quiet": false, // 忽略檢查
+    // eslint 排版 html 與 vue 檔
+    "eslint.validate": [
+        "vue","html", "vue-html", "javascript", "typescriptreact", "typescript"
+    ],
+    "eslint.run": "onType",
+    "eslint.options": {
+      "extensions": [
+         ".js",
+         ".vue",
+      ],
+    },
+
+    //======================= Auto Rename Tag 設定 ==========================//
+    //因為 Auto Rename Tag 擴充套件非常好用，但預設會自動套用在所有檔案格式，     這會帶來一些麻煩。
+    //例如在 JS/TS 檔案中剛好改到有 < 的內容時，會導致程式被改壞，所以建議限制 特定檔案才需要這個功能。
+    // javascript 跟 erb 要自己加
+    "auto-rename-tag.activationOnLanguage": [
+      "html",
+      "xml",
+      "php",
+      "javascript",
+      "erb"
+    ],
+    //============================== Live Server For Web ===================//
+//     "liveServer.settings.useWebExt": true,
+//     "liveServer.settings.host": "localhost",
+//     "liveServer.settings.port": 5500,
+//     "php-cs-fixer.lastDownload": 1558165902655,
+    //============================== VSCode Browser Sync ==================//
+//     "browserSync.config": {
+//        "browser": [
+//            "chrome",
+//            "firefox"
+//        ],
+//        "files": [
+//            "*.html",
+//            "*.log",
+//            "*.php",
+//            "/css/*.css",
+//            "/js/*.js"
+//        ],
+//        "codeSync": false
+//     },
+//     "vsicons.dontShowNewVersionMessage": true,
+
+    //======================= HTML CSS SUPPORT ============================//
+    "css.fileExtensions": [
+            "css",
+            "scss"
+    //設定遠端的 Bootstrap 的 CSS，
+    ],
+    "css.remoteStyleSheets": [
+       "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+    ],
+
+    // todo-tree 設定
+    "todo-tree.tree.showScanModeButton": false,
+    "todo-tree.general.tagGroups": {},
+    // 程式碼輸入特效設定
+    "powermode.enabled": true, // 開啟 Power Mode
+    "powermode.shakeIntensity": 0, // 關閉抖動
+    "powermode.presets": "particles",
+    //========================= Markdown =================================//
+    "markdownFormatter.formatOpt": {},
+    // px-to-rem 每rem對應的畫素
+    "px-to-rem.px-per-rem": 20,
+    // 標記列表(用逗號隔開)，其中內容不應重新格式化。"null" 預設為 "pre" 標記。
+    "markdown.preview.scrollPreviewWithEditorSelection": false,
+    "markdown.preview.scrollEditorWithPreview": false,
+
+    //加入 Markdown 高亮度語法
+    "markdown.styles": [
+        "markdown.css" //將檔案放在當前工作目錄下，並使用相對路徑存取
+    ],
+
+    //Markdown Converter
+     "markdownConverter.ConversionType": [
+        "HTML",
+        "PDF"
+     ],
+     "markdownConverter.DestinationPattern": "${workspaceFolder}/output/${dirname}/${basename}.${extension}",
+
+    // markdown 要產生換行，需在上一行最後面留2個以上空白,  為了保留尾巴空白字在 Markdown 檔案
+    // 保持尾隨空格以創建換行符
+       "[markdown]": {
+       "files.trimTrailingWhitespace": false,
+       // 定義一個預設格式化程式, 該格式化程式優先於所有其他格式化程式設定。必須是提供格式化程式的擴充套件的識別符號。
+       "editor.defaultFormatter": "mervin.markdown-formatter",
+    },
+    // Markdownlint
+    // 取消 Markdownlint 語法錯誤警告
+    "markdownlint.config": {
+        "MD024": false
+    },
+
+    /***** Paste Image 截圖保存路徑 *****/
+    // VS Code 在每次開啟檔案時就不會自動幫我們選擇採用的編碼方式了，VS Code 預設的編碼方式為 UTF-8
+    "files.autoGuessEncoding": true,
+    //分隔符號標準
+    "pasteImage.forceUnixStyleSeparator": true,
+    "markdown.preview.breaks": true,
+    //截圖顯示的相對路徑URL
+    "pasteImage.basePath": "${projectRoot}",
+    //截圖保存的資料夾路徑
+    "pasteImage.path": "${projectRoot}/images",
+    "markdown-preview-enhanced.imageFolderPath": "/images",
+
+    //======================= Picgo =======================
+
+    //======================= Preview on Web Server =======================
+    "previewServer.browsers": ["chrome"],
+    "previewServer.port": 9999,
+    "previewServer.ui": {
+            "port": 3001,
+            "weinrePort": 8081
+    },
+    "editor.suggestSelection": "first",
+    //Visual Studio InteliCode
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    // 讓 ESLint 幫忙檢查及排版
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
+    "editor.linkedEditing": true,
+    // stylus 設定
+    // [stylus]https://marketplace.visualstudio.com/items?itemName=Spooky.stylus
+    "stylusSupremacy.insertColons": true, // 是否插入冒號
+    "stylusSupremacy.insertSemicolons": false, // 是否插入分好
+    "stylusSupremacy.insertBraces": false, // 是否插入大括號
+    "stylusSupremacy.insertNewLineAroundImports": false, // import之後是否換行
+    "stylusSupremacy.insertNewLineAroundBlocks": false, // 兩個選擇器中是否換行
+
+    "atomKeymap.promptV3Features": true,
+    //https: //learningsky.io/visual-studio-code-vs-code-to-clone-push-windows/
+    // path: c:/git/cmd
+    // cd 專案
+    // git init    repository(檔案儲存庫)初始化
+    // git config --global user.name "使用者名稱"
+    // git config --global user.email "使用者郵箱"
+    // 自動生成 .gitconfig
+    // 在你第一次使用時點選推送或者執行上條push的命令時會彈出github的登入框，輸入使用者名稱密碼（在vscode中每次push都要輸入使用者名稱密碼，這裡可以執行git命令讓git軟體記住密碼）如下
+    // git config --global credential.helper store
+    // 新增檔案 test.text ==> U(綠色) 代表 unstage 狀態，沒列入追蹤，左側版控圖示出現數字 1 代表暫止的變更
+    // git add test.txt 將檔案test.txt的內容，加入repository的索引
+    // git status 顯示 "git add test.txt" 的執行結果
+    // test.txt A :檔名末註記由U便A，表示已加入索引，但仍未簽入(Commit) 相同於指令 git add test.txt
+    // git commit -m "Test to commit a file" 將目前repository(檔案資料庫)中，還沒簽入的部分，執行簽入(commit)，建立一個版本，簽入後，test.txt變成白色，右端的A就不再顯示
+    // 存檔後， tes.txt  M(橘色):變成橘色，且檔名末註記 M，原始檔控制顯示，目前這個Repository有一個暫止的變更
+    "git-autoconfig.ignoreRootList": [
+      "C:/allen/gitserver/homepage",
+      "E:/allen/gitserver/cloud_service"
+    ],
+    "git.path": "c:/Git/bin/git.exe",
+
+
+    //Setting Sync
+    "sync.gist": "",
+    "sync.autoDownload": false,
+    "sync.autoUpload": false,
+    "sync.forceDownload": false,
+    "sync.forceUpload": false,
+    "sync.quietSync": false,
+    "sync.removeExtensions": true,
+    "sync.syncExtensions": true,
+
+    "bracket-pair-colorizer-2.colors": [
+      "Gold",
+      "Orchid",
+      "LightSkyBlue"
+    ],
+    "bracket-pair-colorizer-2.activeScopeCSS": [
+      "borderStyle : solid",
+      "borderWidth : 1px",
+      "borderColor : {color}",
+      "opacity: 0.5"
+    ],
+    "bracket-pair-colorizer-2.scopeLineCSS": [
+      "borderStyle : solid",
+      "borderWidth : 1px",
+      "borderColor : {color}",
+      "opacity: 0.5"
+    ],
+    "bracket-pair-colorizer-2.depreciation-notice": false,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "python.defaultInterpreterPath": "c:\\Python\\Python310\\python.exe",
+    "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
+    "php-cs-fixer.lastDownload": 1645749822444,
+    "cSpell.userWords": [
+      "Bounus"
+    ],
+    "sync-env.envSource": "mac31.env",
+    "editor.guides.indentation": false,
+
+
+
+
+}

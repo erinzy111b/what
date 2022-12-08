@@ -12,25 +12,17 @@
 
   <table align="center" border="1" style="border-collapse: collapse;">
     <?php
-    for ($x = 1; $x <= 9; $x++) {
-      //9 row
-      echo "<tr>";
-      for ($y = 1; $y <= 9; $y++) {
+for ($x = 1; $x <= 9; $x++) {
+    //9 row
+    echo "<tr>";
+    for ($y = 1; $y <= 9; $y++) {
         //9 td
-        echo "<td> $x * $y =" . $x * $y .  "</td>";
-      }
-
-
-      echo "</tr>";
+        echo "<td> $x * $y =" . $x * $y . "</td>";
     }
+    echo "</tr>";
+}
 
-
-
-
-
-
-
-    ?>
+?>
 
 
 
