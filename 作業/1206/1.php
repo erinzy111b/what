@@ -11,9 +11,9 @@
 <body>
 
   第一題：今天_____吃_____<br><br>
-  <form name="20221206" action="php_function_practice.php" method="get" align="left">
-    哪一餐：<input type="text" name="when"><br>
-    吃什麼：<input type="text" name="food"><br><br>
+  <form name="20221206" action="1.php" method="get" align="left">
+    哪一餐：<input type="text" name="when" required="required"><br>
+    吃什麼：<input type="text" name="food" required="required"><br><br>
 
     <input type="reset" value="重置"> &nbsp; <input type="submit" value="送出">
   </form><br>

@@ -12,17 +12,27 @@
 
 if (isset($_GET['num'])) {
 
+// explode是不是不行啊(›´ω`‹ )
+// $n = 1231453413;
+// $arr = explode('', $n);
+// echo count($arr) . "<br>";
+// print_r($arr);
+
     $n = $_GET['num'];
 
     function decomp($n)
     {
 
+        // $n = $_GET['num'];
         $nn = preg_split('//', $n, -1, PREG_SPLIT_NO_EMPTY);
+        // print_r($arr);
         $n_n = implode(' ', $nn);
         echo '結果：' . $n_n;
 
     }
     decomp($n);
+
+// $n = $POST_['num'];
 
 }
 

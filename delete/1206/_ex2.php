@@ -14,9 +14,9 @@
 
   <form name="20221206" action="_ex2.php" method="get" align="left">
 
-    最小值：<input type="number" name="min"><br>
-    最大值：<input type="number" name="max"><br>
-    個數：<input type="number" name="times"><br><br>
+    最小值：<input type="number" name="min" required="required"><br>
+    最大值：<input type="number" name="max" required="required"><br>
+    個數：<input type="number" name="times" required="required"><br><br>
     <input type="reset" value="重置"> &nbsp; <input type="submit" value="送出">
   </form><br>
 

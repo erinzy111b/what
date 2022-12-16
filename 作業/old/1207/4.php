@@ -6,10 +6,13 @@
   <input type="reset" value="重置"> &nbsp; <input type="submit" value="送出">
 </form><br>
 
+<!-- ^\+?[1-9][0-9]*$ -->
 
 <?php
 
 if (isset($_POST['num'])) {
+
+    // if ($_POST['num'] = null) {
 
     if (!preg_match("/^-[0-9]*[1-9][0-9]*$/", $_POST['num'])) {
 
@@ -23,6 +26,7 @@ if (isset($_POST['num'])) {
         ;
     } else {echo $_POST['num'] . ' 非正整數，請重新輸入';
     }
+    // } else {echo 'null';}
 
 } else {}
 
