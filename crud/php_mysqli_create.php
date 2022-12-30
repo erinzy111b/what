@@ -1,8 +1,25 @@
-<?php
+<!-- // if (isset($_POST['action']) && $_POST["action"] == "add") {
+//     require_once "";
+// }
+// ;
 
-if (isset($_POST['action']))
-
-?>
+if (isset($_POST["action"]) && $_POST["action"] == "add") {
+    require_once "connDB.php";
+    $sql_query = "INSERT INTO `students`(`cName`,`cSex`,`cBirthday`,`cEmail`,`cPhone`,`cAddr`,`cHeight`,`cWeight`) VALUES(";
+    $sql_query .= "'" . $_POST["cName"] . "',";
+    $sql_query .= "'" . $_POST["cSex"] . "',";
+    $sql_query .= "'" . $_POST["cBirthday"] . "',";
+    $sql_query .= "'" . $_POST["cEmail"] . "',";
+    $sql_query .= "'" . $_POST["cPhone"] . "',";
+    $sql_query .= "'" . $_POST["cAddr"] . "',";
+    $sql_query .= "'" . $_POST["cHeight"] . "',";
+    $sql_query .= "'" . $_POST["cWeight"] . "')";
+    // echo $sql_query;
+    // exit;
+    mysqli_query($conn, $sql_query);
+    mysqli_close($conn); //關閉資料庫連接
+    header("location: php_mysqli_read.php");
+} -->
 
 
 
